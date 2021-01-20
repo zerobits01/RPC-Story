@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "basic-ii/my.package.proto";
+
+
+
+message Test {
+    my.package.Date date = 1;
+}
+
+// using packages for languages like java
+
+// how to run
+// > protoc

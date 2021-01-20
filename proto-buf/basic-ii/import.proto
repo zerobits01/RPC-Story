@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "basic-ii/to-import.proto"; // from the root of terminal running the command
+
+message Test {
+
+    Example exmple = 1;
+}

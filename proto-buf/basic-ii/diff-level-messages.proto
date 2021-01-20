@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message Person {
+    
+    int32 age = 1;
+    string fname = 2;
+    string lname = 3;
+    bool profile_verified = 4;
+    double height = 5;
+    bytes image = 6;
+
+    Date birth_date = 7;
+
+    message Address {
+        string addr_line_1 = 1;
+        string addr_line_2 = 2;
+    }
+
+    repeated Address addrs = 8;
+}
+
+message Date {
+
+    int32 year = 1;
+    int32 month= 2;
+    int32 day  = 3; 
+}
+

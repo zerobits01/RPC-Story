@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+
+message Person {
+    int32 age = 1;
+    string fname = 2;
+    string lname = 3;
+    bool profile_verified = 4;
+    double height = 5;
+    bytes image = 6;
+
+    repeated string phone_numbers = 7;
+
+    enum EyeColor {
+        Unknow_Color = 0;
+        Green = 1;
+        Blue = 2;
+    }
+
+    EyeColor eye_color = 8;
+}
+
+/*
+default values:
+- bool: false
+- number: 0
+- string: empty string
+- bytes: empty array
+- repeated: empty list 
+- enum: first value
+*/
