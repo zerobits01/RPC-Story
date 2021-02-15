@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+message Person {
+    int32 id = 1;
+
+    message Name {
+        string fname = 1;
+        string lname = 2;
+    }
+
+    message Address {
+        string city = 1;
+        string addr = 2;
+        string postal_Code = 3;
+    }
+
+    Name fullname = 2;
+
+    repeated Address addrs = 3;
+}
+
+message Response {
+    int32 code = 1;
+    string message = 2;
+}
+
+service DBHandler{
+    rpc create_user(Person) returns (Response) {}
+}
+

@@ -1,19 +1,23 @@
 """The Python implememntation of seans grpc client"""
+import ping_pong_pb2_grpc
+import ping_pong_pb2
+import grpc
+import time
 import os
 import sys
 import os.path
 sys.path.append(os.path.abspath("."))
-import time
-import grpc
-import ping_pong_pb2
-import ping_pong_pb2_grpc
+
 
 def run():
     "The run method, that sends gRPC conformant messsages to the server"
     counter = 0
     pid = os.getpid()
+    # creating the channel to conect to and doing RPC
     with grpc.insecure_channel("localhost:9999") as channel:
+        # alsways the stubs should be connected to a channel
         stub = ping_pong_pb2_grpc.PingPongServiceStub(channel)
+        # pay attention that we have servicer and stub that in client we use the stub
         while True:
             try:
                 start = time.time()

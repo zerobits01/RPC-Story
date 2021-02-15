@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "basic-ii/to-import.proto"; // from the root of terminal running the command
 
-message Test {
+message Test { // this Test is class that has a class attribute named example 
 
-    Example exmple = 1;
+    Example exmple = 1; // this is a class of Example
 }

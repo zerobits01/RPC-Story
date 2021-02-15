@@ -8,11 +8,13 @@ from concurrent import futures
 import threading
 import time
 import grpc
-import ping_pong_pb2
-import ping_pong_pb2_grpc
+import ping_pong_pb2 # for the datatypes
+import ping_pong_pb2_grpc # for using the services
 
 class Listener(ping_pong_pb2_grpc.PingPongServiceServicer):
-    """The listener function implemests the rpc call as described in the .proto file"""
+    """The listener function implemests the rpc call as described in the .proto file
+        this is a kinda using polymorphism and rewriting and reloading the methods
+    """
 
     def __init__(self):
         self.counter = 0
@@ -28,6 +30,7 @@ class Listener(ping_pong_pb2_grpc.PingPongServiceServicer):
             self.last_print_time = time.time()
             self.counter = 0
         return ping_pong_pb2.Pong(count=request.count + 1)
+        # the request is instance of Ping type and we know this so we use the attrib count of it
 
 
 def serve():

@@ -8,3 +8,6 @@ message SimpleMessage {
   string name = 3;
   repeated int32 sample_list = 4;
 } 
+
+// convert to python:
+//  > protoc --python_out=dirname filename.proto

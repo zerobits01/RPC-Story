@@ -11,7 +11,7 @@ Descriptor is the metadata
 the reflection is using dictionary to generate the type
 
 '''
-message = simple_pb2.SimpleMessage()
+message = simple_pb2.SimpleMessage() # initiating an instance from SimpleMessage class
 message.id = 10
 message.is_simple = True
 message.sample_list.append(1)
