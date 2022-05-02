@@ -1,2 +1,5 @@
 grpcio
 grpcio-tools
+pytest
+pytest-asyncio
+pytest-mock
